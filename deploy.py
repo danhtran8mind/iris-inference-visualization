@@ -5,18 +5,21 @@ import streamlit as st
 from PIL import Image 
   
 # loading in the model to predict on the data 
-pickle_in = open('rf_clf.pkl', 'rb') 
-classifier = pickle.load(pickle_in) 
-  
+model_file = open('rf_clf.pkl', 'rb') 
+scaler_file = open('scaler.pkl', 'rb') 
+
+classifier = pickle.load(model_file)
+scaler = pickle.load(scaler_file)
+
 def welcome(): 
     return 'welcome all'
   
 # defining the function which will make the prediction using  
 # the data which the user inputs 
-def prediction(variance, skew, curtosis, entropy):   
-   
+def prediction(sepal_length, sepal_width, petal_length, petal_width):   
+    X_infer = scaler.transform([[sepal_length, sepal_width, petal_length, petal_width]])
     prediction = classifier.predict( 
-        [[variance, skew, curtosis, entropy]]) 
+        X_infer) 
     print(prediction) 
     return prediction 
       
@@ -24,13 +27,13 @@ def prediction(variance, skew, curtosis, entropy):
 # this is the main function in which we define our webpage  
 def main(): 
       # giving the webpage a title 
-    st.title("Bank Note Authentication") 
+    st.title("IRIS Classifier") 
       
     # here we define some of the front end elements of the web page like  
     # the font and background color, the padding and the text to be displayed 
     html_temp = """ 
     <div style ="background-color:yellow;padding:13px"> 
-    <h1 style ="color:black;text-align:center;">Streamlit Bank Note Authentication Classifier ML App </h1> 
+    <h1 style ="color:black;text-align:center;">Streamlit IRIS Classifier ML App </h1> 
     </div> 
     """
       
@@ -41,18 +44,18 @@ def main():
     # the following lines create text boxes in which the user can enter  
     # the data required to make the prediction
 
-    # variance, skew, curtosis, entropy
-    variance = st.text_input("Variance", "Type Here") 
-    skew = st.text_input("Skew", "Type Here") 
-    curtosis = st.text_input("Curtosis", "Type Here") 
-    entropy = st.text_input("Entropy", "Type Here") 
+    # sepal_length,	sepal_width, petal_length, petal_width
+    sepal_length = st.text_input("Sepal length", "Type Here") 
+    sepal_width = st.text_input("Sepal width", "Type Here") 
+    petal_length = st.text_input("Petal length", "Type Here") 
+    petal_width = st.text_input("Petal width", "Type Here") 
     result ="" 
       
     # the below line ensures that when the button called 'Predict' is clicked,  
     # the prediction function defined above is called to make the prediction  
     # and store it in the variable result 
     if st.button("Predict"): 
-        result = prediction(variance, skew, curtosis, entropy)
+        result = prediction(sepal_length, sepal_width, petal_length, petal_width)
     st.success('The output is {}'.format(result)) 
      
 if __name__=='__main__': 
