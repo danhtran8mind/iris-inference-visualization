@@ -45,10 +45,11 @@ def main():
     # the data required to make the prediction
 
     # sepal_length,	sepal_width, petal_length, petal_width
-    sepal_length = st.text_input("Sepal length", "Type Here") 
-    sepal_width = st.text_input("Sepal width", "Type Here") 
-    petal_length = st.text_input("Petal length", "Type Here") 
-    petal_width = st.text_input("Petal width", "Type Here") 
+    sepal_length = st.text_input("Sepal length", placeholder="Type Sepal length here") 
+    sepal_width = st.text_input("Sepal width", placeholder="Type Sepal width here") 
+    petal_length = st.text_input("Petal length", placeholder="Type Petal length here") 
+    petal_width = st.text_input("Petal width", placeholder="Type Petal width here") 
+    # abc = st.sidebar
     result ="" 
       
     # the below line ensures that when the button called 'Predict' is clicked,  
