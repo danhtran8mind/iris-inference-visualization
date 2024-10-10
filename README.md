@@ -12,12 +12,12 @@ This Streamlit app helps you predict the species of an Iris flower 💐 based on
 
 1. **Install the Essentials:**
    ```bash
-   pip install streamlit pandas scikit-learn
+   pip install -r reqiurments.txt
    ```
 
 2. **Start the App:**
    ```bash
-   streamlit run app.py
+   streamlit run deploy.py
    ```
 
 ## Usage 
