@@ -17,7 +17,7 @@ This Streamlit app helps you predict the species of an Iris flower 💐 based on
 
 2. **Start the App:**
    ```bash
-   streamlit run deploy.py
+   streamlit run main.py
    ```
 
 ## Usage 
