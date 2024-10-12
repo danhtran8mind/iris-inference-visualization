@@ -11,7 +11,7 @@ class MLInference:
         X_infer = self.scaler.transform([[sepal_length, sepal_width, petal_length, petal_width]])
         prediction = self.classifier.predict(X_infer) 
         prob_pre = np.max(self.classifier.predict_proba(X_infer),axis=1)
-        return [prediction[0], str(prob_pre[0] * 100) + "%"]
+        return prediction[0], f"{(prob_pre[0] * 100):.2f} %" # str({(prob_pre[0] * 100):.2f}) + "%"
 
     def load_models(self):
         model_file = open('saved_models/rf_clf.pkl', 'rb') 
@@ -83,12 +83,10 @@ class MLInference:
         result ="" 
         
         if st.button("Predict"): 
-            result = self.prediction(sepal_length, sepal_width, petal_length, petal_width)
-            st.success(f'The output is "{result[0]}", with confidence is {result[1]}')
+            pre, prob = self.prediction(sepal_length, sepal_width, petal_length, petal_width)
+            print(pre, prob)
+            st.success(f'The output is {pre} with confidence is {prob:.2f}')   
 
-        
-
-     
 if __name__=='__main__':
     aa = MLInference()
     aa.ml_inference()
