@@ -10,14 +10,19 @@ This Streamlit app helps you predict the species of an Iris flower 💐 based on
 
 ## How to Run 🚀
 
-1. **Install the Essentials:**
+0. **Active the Virtual Enviroment:** (run below command if you want to use virtual environment on Linux)
+   ```bash
+   . venv/bin/activate 
+   ```
+
+2. **Install the Essentials:**
    ```bash
    pip install -r reqiurments.txt
    ```
 
-2. **Start the App:**
+3. **Start the App:**
    ```bash
-   streamlit run main.py
+   streamlit run streamlit_app.py
    ```
 
 ## Usage 
