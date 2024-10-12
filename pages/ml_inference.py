@@ -84,8 +84,7 @@ class MLInference:
         
         if st.button("Predict"): 
             pre, prob = self.prediction(sepal_length, sepal_width, petal_length, petal_width)
-            print(pre, prob)
-            st.success(f'The output is {pre} with confidence is {prob:.2f}')   
+            st.success(f'The output is {pre} with confidence is {prob}')   
 
 if __name__=='__main__':
     aa = MLInference()
