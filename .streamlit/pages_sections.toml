@@ -1,0 +1,14 @@
+[[pages]]
+path = "pages/home.py"
+name = "Home"
+icon = "🏠"
+
+[[pages]]
+path = "pages/ml_inference.py"
+name = "Model Inference"
+icon = "🧠"
+
+[[pages]]
+path = "pages/visualize.py"
+name = "Iris Visualization"
+icon = "📈"

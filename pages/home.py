@@ -1,4 +1,19 @@
-# 🌺 Iris Flower Classifier and Visualization App 🌺
+import streamlit as st
+from streamlit.logger import get_logger
+
+# LOGGER = get_logger(__name__)
+
+
+def home_page():
+
+    # giving the webpage a title 
+    st.sidebar.title("Introduction")
+
+    st.sidebar.success("Select a demo above.")
+
+    st.markdown(
+        """
+# 🌺 Iris Flower Classifier App 🌺
 
 This Streamlit app helps you predict the species of an Iris flower 💐 based on its measurements! 📏
 
@@ -10,14 +25,14 @@ This Streamlit app helps you predict the species of an Iris flower 💐 based on
 
 ## How to Run 🚀
 
-1. **Install the Dependencies:**
+1. **Install the Essentials:**
    ```bash
    pip install -r reqiurments.txt
    ```
 
 2. **Start the App:**
    ```bash
-   streamlit run app.py
+   streamlit run streamlit_app.py
    ```
 
 ## Usage 
@@ -36,3 +51,9 @@ This Streamlit app helps you predict the species of an Iris flower 💐 based on
 ## Contributing 🤝
 
 Want to help improve the app?  Feel free to open an issue or submit a pull request! 🎉
+"""
+    )
+
+home_page()
+# if __name__ == "__main__":
+#     run()
