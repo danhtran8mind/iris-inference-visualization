@@ -8,6 +8,10 @@ This Streamlit app helps you predict the species of an Iris flower 💐 based on
 * **Accurate Predictions:**  Powered by a trained machine learning model 🧠 for reliable results.
 * **Clear Results:**  See the predicted species along with your input measurements 📊.
 
+## Demo App
+
+- [Demo App](https://huggingface.co/spaces/danhtran8mind/streamlit-iris-inference-visualization)
+- [GitHub Source code](https://github.com/danhtran8mind/iris-inference-visualization)
 ## How to Run 🚀
 
 1. **Install the Dependencies:**
